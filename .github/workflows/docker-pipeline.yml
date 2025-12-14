@@ -1,4 +1,4 @@
-name: CI & Docker Publish
+name: Pipeline
 
 on:
   push:

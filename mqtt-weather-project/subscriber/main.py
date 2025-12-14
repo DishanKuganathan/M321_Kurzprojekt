@@ -1,9 +1,14 @@
 import paho.mqtt.client as mqtt
 import json
 
+
 def on_message(client, userdata, msg):
     data = json.loads(msg.payload.decode())
-    print(f"Received from {data['stationId']}: {data['temperature']}°C / {data['humidity']}% at {data['timestamp']}")
+    print(
+        f"Received from {data['stationId']}: {data['temperature']}°C / "
+        f"{data['humidity']}% at {data['timestamp']}"
+    )
+
 
 client = mqtt.Client()
 client.connect("localhost", 1883, 60)
