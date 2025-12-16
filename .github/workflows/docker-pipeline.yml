@@ -24,7 +24,7 @@ jobs:
 
       - name: Run flake8
         run: |
-          cd mqtt-weather-project
+          cd mqtt_weather_project
           flake8 .
 
   test:
@@ -43,12 +43,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd mqtt-weather-project/subscriber
+          cd mqtt_weather_project/subscriber
           pip install -r requirements.txt
           pip install pytest
 
       - name: Run tests
-        run: pytest mqtt-weather-project
+        run: |
+          cd mqtt_weather_project
+          PYTHONPATH=. pytest tests
 
   docker:
     name: Push Docker Image --> DockerHUB
@@ -69,6 +71,6 @@ jobs:
       - name: Build Docker Image and Push to DockerHUB
         uses: docker/build-push-action@v5
         with:
-          context: mqtt-weather-project/stations
+          context: mqtt_weather_project/stations
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mqtt-weather-station:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mqtt_weather_station:latest
