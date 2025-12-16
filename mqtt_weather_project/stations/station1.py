@@ -4,6 +4,7 @@ import random
 import json
 import paho.mqtt.client as mqtt
 
+# Das ist ein Testkommentar um den MR zu testen
 broker = "mosquitto"
 port = 1883
 topic = "weather"
