@@ -5,7 +5,6 @@ import json
 import paho.mqtt.client as mqtt
 
 
-
 def create_data_for_test(station_id):
     return {
         "stationId": station_id,
