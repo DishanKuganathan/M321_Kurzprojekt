@@ -33,6 +33,7 @@ while True:
     print(f"[{station_id}] Published: {data}")
     time.sleep(interval)
 
+
 def create_data_for_test(station_id):
     return {
         "stationId": station_id,
