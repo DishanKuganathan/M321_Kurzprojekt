@@ -48,7 +48,9 @@ jobs:
           pip install pytest
 
       - name: Run tests
-        run: pytest mqtt_weather_project
+        run: |
+          cd mqtt_weather_project
+          PYTHONPATH=. pytest testss
 
   docker:
     name: Push Docker Image --> DockerHUB
