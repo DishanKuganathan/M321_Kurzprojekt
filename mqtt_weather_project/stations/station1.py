@@ -4,7 +4,6 @@ import random
 import json
 import paho.mqtt.client as mqtt
 
-# Das ist ein Testkommentar um den MR zu testen
 
 
 def create_data_for_test(station_id):
