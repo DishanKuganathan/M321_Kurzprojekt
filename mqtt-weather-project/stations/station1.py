@@ -32,3 +32,11 @@ while True:
     client.publish(topic, json.dumps(data))
     print(f"[{station_id}] Published: {data}")
     time.sleep(interval)
+
+def create_data_for_test(station_id):
+    return {
+        "stationId": station_id,
+        "temperature": round(random.uniform(15, 30), 1),
+        "humidity": round(random.uniform(30, 60), 1),
+        "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    }
