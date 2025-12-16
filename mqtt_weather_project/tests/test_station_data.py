@@ -1,4 +1,4 @@
-from stations.station1 import create_data_for_test
+from mqtt_weather_project.stations.station1 import create_data_for_test
 
 
 def test_create_data_structure():
